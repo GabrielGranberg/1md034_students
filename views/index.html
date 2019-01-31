@@ -1,10 +1,102 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <title>Hurr Durr Burger</title>
+
+
+      
     </head>
     <body>
-        <h1>Hello World!!!</h1>
-        <a href="/map" target="_blank">Open map in new window</a>.
+      
+        <section class="top">
+          <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/389/404/a2b.jpg" class="top" id="cat">
+            <h1>Hurr Durr Burgersak</h1>
+        </section>
+       
+        <section class="Mat">
+          <h3>Välj Burgare</h3>
+          <div class="wrapper">
+          <div class="box namn1">Meep Moop Burgare</div>
+          <div class="box namn2">KyckBurgare</div>
+          <div class="box namn3">Bönburgare med hästsås</div>
+          
+          
+          
+          
+          <div class="box bild1"><img src="https://icase.azureedge.net/imagevaultfiles/id_101408/cf_259/hamburgare-712808.jpg" alt="Sick burger" title="En burgare" style="width:240px;height:240px;"></div>
+          <div class="box bild2"><img src="https://www.kitchensanctuary.com/wp-content/uploads/2017/08/Crispy-Chicken-Burger-with-Honey-Mustard-Coleslaw-recipe-square-FS.jpg" alt="Kyckling burgare" title="En burgare av kyckling" style="width:240px;height:240px;"></div>
+          <div class="box bild3"><img src="https://www.svtstatic.se/image-cms/svtse/1508939091/gokvall/article15728496.svt/alternates/medium/bonburgare-jpg" alt="Bönburgare med ajvar" title="Bönburgare med Ajvar" style="width:240px;height:240px;"></div>
+          
+          
+       
+            <div class="box inst1"><ul>
+                <li>Alkohol</li>
+                <li class="Häst">Häst</li>
+            </ul></div>
+            <div class="box inst2"><ul>
+                <li>Kyckling</li>
+                <li>Bröd</li>
+            </ul></div>
+            <div class="box inst3"><ul>
+                <li>Böna</li>
+                <li class="Häst">Häst</li>
+            </ul></div>
+      
+        </section>
+        </div>
+
+        <!--<a href="/map" target="_blank">Open map in new window</a>.-->
+
+        <section class="info">
+
+          <h3>Ge oss info</h3>
+          <form>
+            <p>
+              <label for="För och efternamn">För och efternamn </label><br>
+              <input type="text" id="För och efternamn" name="n" required="required" placeholder="För och efternamn">
+            </p>
+            <p>
+              <label for="Mailadress">Mailadress</label><br>
+              <input type="email" name="em" required="required" placeholder="Mailadress">
+            </p>            
+            <p>
+              <label for="Gatuadress">Gatuadress</label><br>
+              <input type="text" id="Gatauadress" name="g" required="required" placeholder="Gatuadress">              
+            </p>
+            <p>
+              <label for="Husnummer">Husnummer</label><br>
+              <input type="number" id="Husnummer" name="h" required="required" placeholder="Husnummer">              
+            </p>
+             <p>
+              <div>
+              <input type="radio" id="Vill inte säga" name="K" value="Vill inte säga" checked>
+              <label for="Vill inte säga">Non-binary</label><br>
+              </div>
+              <div>
+                <input type="radio" id="Man" name="K" value="Man">
+                <label for="Man">Man</label>
+              </div>
+
+              <div>
+                <input type="radio" id="Kvinna" name="K" value="Kvinna">
+                <label for="Kvinna">Kvinna</label>
+              </div>
+            </p>
+            <p>
+              <label for="Betalsätt">Betalsätt</label><br>
+              <select id="Betalsätt" name="b">
+                <option>Pengar</option>
+                <option>Kapsyler</option>
+                <option>Kameler</option>
+                <option>Spelkort</option>
+              </select>
+            </p>
+            <p>
+              <button type="submit"><img src="https://i.ytimg.com/vi/oW_xiyNJg2w/hqdefault.jpg" style="height:60px;width:120px;"></button>
+            </p>
+          </form>
+        </section>
     </body>
 </html>
