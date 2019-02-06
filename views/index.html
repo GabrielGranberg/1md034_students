@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
+  <head>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/js_script.js" defer></script>
+    
+    <script src="js/vue_script.js" defer></script>
+    
       <link rel="stylesheet" type="text/css" href="/css/style.css">
       <title>Hurr Durr Burger</title>
 
 
       
     </head>
-    <body>
+  <body>
       
         <section class="top">
           <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/389/404/a2b.jpg" class="top" id="cat">
             <h1>Hurr Durr Burgersak</h1>
         </section>
-       
-        <section class="Mat">
-          <h3>Välj Burgare</h3>
+        <section class="Mat" id="BS">
+          <h3>{{VäljEnBurgare}}</h3>
           <div class="wrapper">
-          <div class="box namn1">Meep Moop Burgare</div>
-          <div class="box namn2">KyckBurgare</div>
-          <div class="box namn3">Bönburgare med hästsås</div>
-          
-          
-          
-          
-          <div class="box bild1"><img src="https://icase.azureedge.net/imagevaultfiles/id_101408/cf_259/hamburgare-712808.jpg" alt="Sick burger" title="En burgare" style="width:240px;height:240px;"></div>
-          <div class="box bild2"><img src="https://www.kitchensanctuary.com/wp-content/uploads/2017/08/Crispy-Chicken-Burger-with-Honey-Mustard-Coleslaw-recipe-square-FS.jpg" alt="Kyckling burgare" title="En burgare av kyckling" style="width:240px;height:240px;"></div>
-          <div class="box bild3"><img src="https://www.svtstatic.se/image-cms/svtse/1508939091/gokvall/article15728496.svt/alternates/medium/bonburgare-jpg" alt="Bönburgare med ajvar" title="Bönburgare med Ajvar" style="width:240px;height:240px;"></div>
-          
-          
-       
-            <div class="box inst1"><ul>
-                <li>Alkohol</li>
-                <li class="Häst">Häst</li>
-            </ul></div>
-            <div class="box inst2"><ul>
-                <li>Kyckling</li>
-                <li>Bröd</li>
-            </ul></div>
-            <div class="box inst3"><ul>
-                <li>Böna</li>
-                <li class="Häst">Häst</li>
-            </ul></div>
-      
+            <template v-for="(burger, index) in menuArray">
+              <div v-bind:style="`grid-column: ${+index +1}`" class="box namn" id="BS">{{burger.namn}}</div>         
+              
+              <div v-bind:style="`grid-column: ${+index +1}`" class="box bild">
+                <img v-bind:src="burger.img" style="width:205px;height:240px;">            
+              </div>
+              
+              <div v-bind:style="`grid-column: ${+index +1}`" class="box inst">
+                <ul>
+                  <li>{{burger.kCal}} kCal</li>
+                  <li v-if="burger.häst"class="Häst">Häst</li>
+                </ul>
+              </div>
+                <input v-bind:style="`grid-column: ${+index +1}`" type="checkbox" class="check" name="burgaa" :value="burger.namn"> {{burger.namn}}<br>
+
+            </template>
+          </div>          
         </section>
-        </div>
+        
 
         <!--<a href="/map" target="_blank">Open map in new window</a>.-->
 
@@ -59,7 +55,7 @@
             </p>
             <p>
               <label for="Mailadress">Mailadress</label><br>
-              <input type="email" name="em" required="required" placeholder="Mailadress">
+              <input type="email" id="email" name="em" required="required" placeholder="Mailadress">
             </p>            
             <p>
               <label for="Gatuadress">Gatuadress</label><br>
@@ -71,7 +67,7 @@
             </p>
              <p>
               <div>
-              <input type="radio" id="Vill inte säga" name="K" value="Vill inte säga" checked>
+              <input type="radio" id="Non-binary" name="K" value="Non-binary" checked>
               <label for="Vill inte säga">Non-binary</label><br>
               </div>
               <div>
@@ -93,10 +89,15 @@
                 <option>Spelkort</option>
               </select>
             </p>
-            <p>
-              <button type="submit"><img src="https://i.ytimg.com/vi/oW_xiyNJg2w/hqdefault.jpg" style="height:60px;width:120px;"></button>
-            </p>
           </form>
+           <p>
+              <div id="order">
+                <button type="submit" v-on:click="markDone"><img src="https://i.ytimg.com/vi/oW_xiyNJg2w/hqdefault.jpg" style="height:60px;width:120px;"></button>
+                <div id="clog">
+                  {{output}}
+                </div>
+              </div>
+            </p>
         </section>
     </body>
 </html>
